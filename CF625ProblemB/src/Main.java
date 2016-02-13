@@ -13,11 +13,10 @@ public class Main {
 		String g = inputReader.next();
 		String a = inputReader.next();
 		int cnt = 0;
-		int T[] = processForKMP(a);
-		int index = findIndex(g, a, 0, T);
+		int index = g.indexOf(a, 0);
 		while (index > -1) {
 			cnt++;
-			index = findIndex(g, a, index + a.length(), T);
+			index = g.indexOf(a, index + a.length());
 		}
 		System.out.println(cnt);
 	}
